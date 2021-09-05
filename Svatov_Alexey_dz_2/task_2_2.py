@@ -3,10 +3,8 @@ my_str = ''
 for value in my_list:
     if value.isdigit():
         value = '"' + value.zfill(2) + '"'
-    else:
-        for element in value:
-            if element.isdigit():
-                value = '"' + value[0] + element.zfill(2) + '"'
+    elif value[1::].isdigit():
+        value = '"' + value[0] + value[1::].zfill(2) + '"'
     my_str += value
     my_str += ' '
 print(my_str)
