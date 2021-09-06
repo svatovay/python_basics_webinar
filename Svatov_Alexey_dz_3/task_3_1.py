@@ -12,7 +12,7 @@ def num_translate(input_num):
         'nine': 'девять',
         'ten': 'десять'
     }
-    output_num = num_dict[input_num]
+    output_num = num_dict.get(input_num)
     return output_num
 
 
