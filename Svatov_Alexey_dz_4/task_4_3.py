@@ -19,7 +19,7 @@ def currency_rates(main_valute):
     for valute in main_info:
         dict_info.setdefault(separate(valute, '<CharCode>'), separate(valute, '<Value>'))
 
-    return print(f"{dict_info.get(main_valute): .2f}, {datetime.strptime(date, '%d.%m.%Y').date()}")
+    return print(f"{dict_info.get(main_valute.upper()): .2f}, {datetime.strptime(date, '%d.%m.%Y').date()}")
 
 
 if __name__ == '__main__':
