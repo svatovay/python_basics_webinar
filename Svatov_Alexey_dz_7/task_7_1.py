@@ -1,7 +1,7 @@
 import os
 import shutil
 
-starter = ['my_project', 'settings', 'mainapp', 'adminapp', 'authapp']
+starter = ['my_project_1', 'settings', 'mainapp', 'adminapp', 'authapp']
 root_dir = starter.pop(0)
 for dir in starter:
     dir_path = os.path.join(root_dir, dir)
