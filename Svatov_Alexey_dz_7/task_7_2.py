@@ -4,9 +4,10 @@ import yaml
 with open('config.yaml', 'r') as f:
     starter = yaml.safe_load(f)
 
+
 def create_path(values, prefix=""):
-    for direcory, path in values.items():
-        dir_path = os.path.join(prefix, direcory)
+    for directory, path in values.items():
+        dir_path = os.path.join(prefix, directory)
         os.makedirs(dir_path, exist_ok=True)
         if isinstance(path, dict):
             create_path(path, dir_path)
@@ -17,4 +18,6 @@ def create_path(values, prefix=""):
                 elif isinstance(i, str):
                     with open(os.path.join(dir_path, f'{i}'), 'w') as _:
                         pass
+
+
 create_path(starter)
