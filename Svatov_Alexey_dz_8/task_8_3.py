@@ -8,7 +8,10 @@ def type_logger(func):
     def wrapper(*args):
         nonlocal cache
         for arg in args:
-            cache.setdefault(arg, type(arg))
+            try:
+                cache.setdefault(arg, type(arg))
+            except TypeError:
+                cache.setdefault('unhashable type', type(arg))
         for key, value in cache.items():
             print(f'{func.__name__}({key}: {value})')
         return cache
@@ -21,4 +24,4 @@ def calc_cube(x):
     return x ** 3
 
 
-a = calc_cube(5, 6, 'abc')
+a = calc_cube(5, 6, 'abc', [1, 2])
