@@ -1,6 +1,3 @@
-from abc import ABC, abstractmethod
-
-
 class Clothes:
     def __init__(self):
         self.summary_list = []
